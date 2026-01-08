@@ -2,12 +2,6 @@
   Positivus Header Module Styles
 */
 
-:root {
-  --primary-color: #1E1E1E;
-  --secondary-color: #B9FF66;
-  --text-color: #FFFFFF;
-  --font-family: 'Space Grotesk', sans-serif; /* Assuming this font is loaded */
-}
 
 /* General Header Styles */
 .positivus-header {
