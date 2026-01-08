@@ -9,7 +9,7 @@
     {{ standard_header_includes }}
 
     {# Theme CSS #}
-    {% require_css get_asset_url("../../css/main.css") %}
+    {{ require_css(get_asset_url("../../css/main.css")) }}
 
     {# Google Fonts - Example #}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +32,6 @@
     {{ standard_footer_includes }}
 
     {# Theme JS #}
-    {% require_js get_asset_url("../../js/main.js") %}
+    {{ require_js(get_asset_url("../../js/main.js")) }}
   </body>
 </html>
