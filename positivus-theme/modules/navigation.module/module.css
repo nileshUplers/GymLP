@@ -1,0 +1,164 @@
+/*
+  Positivus Header Module Styles
+*/
+
+:root {
+  --primary-color: #1E1E1E;
+  --secondary-color: #B9FF66;
+  --text-color: #FFFFFF;
+  --font-family: 'Space Grotesk', sans-serif; /* Assuming this font is loaded */
+}
+
+/* General Header Styles */
+.positivus-header {
+  background-color: var(--primary-color);
+  padding: 20px 40px;
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+.positivus-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.positivus-header__logo a {
+  display: inline-block;
+}
+
+.positivus-header__logo img {
+  max-height: 40px;
+  width: auto;
+}
+
+/* Navigation Styles */
+.positivus-header__nav {
+  display: block;
+}
+
+.positivus-header__nav .hs-menu-wrapper > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.positivus-header__nav .hs-menu-wrapper > ul > li {
+  margin: 0 15px;
+}
+
+.positivus-header__nav .hs-menu-wrapper > ul > li > a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.positivus-header__nav .hs-menu-wrapper > ul > li > a:hover {
+  color: var(--secondary-color);
+}
+
+/* CTA Button Styles */
+.positivus-header__cta .button {
+  border: 1px solid var(--text-color);
+  padding: 12px 24px;
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.positivus-header__cta .button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+
+/* Mobile Toggle Styles */
+.positivus-header__toggle {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.positivus-header__toggle-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-color);
+  position: relative;
+}
+
+.positivus-header__toggle-icon::before,
+.positivus-header__toggle-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  transition: transform 0.3s ease;
+}
+
+.positivus-header__toggle-icon::before {
+  top: -8px;
+}
+
+.positivus-header__toggle-icon::after {
+  bottom: -8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .positivus-header__nav {
+    display: none;
+    position: absolute;
+    top: 80px; /* Adjust as needed */
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .positivus-header__nav.is-open {
+    display: flex;
+  }
+
+  .positivus-header__nav .hs-menu-wrapper > ul {
+    flex-direction: column;
+  }
+
+  .positivus-header__nav .hs-menu-wrapper > ul > li {
+    margin: 15px 0;
+  }
+
+  .positivus-header__cta {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .positivus-header__toggle {
+    display: block;
+  }
+
+  /* "X" icon for open state */
+  .positivus-header__toggle.is-open .positivus-header__toggle-icon {
+      background-color: transparent;
+  }
+  .positivus-header__toggle.is-open .positivus-header__toggle-icon::before {
+      transform: rotate(45deg);
+      top: 0;
+  }
+  .positivus-header__toggle.is-open .positivus-header__toggle-icon::after {
+      transform: rotate(-45deg);
+      bottom: 0;
+  }
+}
