@@ -1,0 +1,107 @@
+<!--
+  templateType: module
+  label: 'Services Section'
+  is-available-for-new-content: true
+-->
+<!--
+HubSpot Fields:
+[
+  {
+    "id": "title",
+    "name": "title",
+    "label": "Title",
+    "type": "text",
+    "default": "Services"
+  },
+  {
+    "id": "intro_text",
+    "name": "intro_text",
+    "label": "Introductory Text",
+    "type": "richtext",
+    "default": "<p>At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:</p>"
+  },
+  {
+    "id": "service_cards",
+    "name": "service_cards",
+    "label": "Service Cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "default": 6
+    },
+    "children": [
+      {
+        "id": "card_title",
+        "name": "card_title",
+        "label": "Card Title",
+        "type": "text",
+        "default": "Service Title"
+      },
+      {
+        "id": "card_link",
+        "name": "card_link",
+        "label": "Card Link",
+        "type": "link",
+        "default": {
+          "url": { "href": "#" },
+          "text": "Learn more"
+        }
+      },
+      {
+        "id": "card_image",
+        "name": "card_image",
+        "label": "Card Image",
+        "type": "image",
+        "default": {
+          "src": "{{ get_asset_url('/positivus-theme/images/service-placeholder.png') }}",
+          "alt": "Service illustration"
+        }
+      },
+      {
+        "id": "card_style",
+        "name": "card_style",
+        "label": "Card Style",
+        "type": "choice",
+        "choices": [
+          ["light", "Light"],
+          ["dark", "Dark"],
+          ["green", "Green"]
+        ],
+        "default": "light"
+      }
+    ]
+  }
+]
+-->
+
+<section class="positivus-services">
+  <div class="positivus-services__wrapper">
+    <div class="positivus-services__header">
+      <h2 class="positivus-services__title">{{ module.title }}</h2>
+      <div class="positivus-services__intro">
+        {{ module.intro_text }}
+      </div>
+    </div>
+    <div class="positivus-services__grid">
+      {% for card in module.service_cards %}
+        <div class="service-card service-card--{{ card.card_style }}">
+          <div class="service-card__content">
+            <h3 class="service-card__title">{{ card.card_title }}</h3>
+            <a class="service-card__link" href="{{ card.card_link.url.href }}"
+              {% if card.card_link.open_in_new_tab %}target="_blank"{% endif %}
+              {% if card.card_link.rel %}rel="{{ card.card_link.rel|join(' ') }}"{% endif %}
+            >
+              <span class="service-card__link-icon"></span>
+              <span class="service-card__link-text">{{ card.card_link.text }}</span>
+            </a>
+          </div>
+          <div class="service-card__image">
+            {% if card.card_image.src %}
+              <img src="{{ card.card_image.src }}" alt="{{ card.card_image.alt }}" width="{{ card.card_image.width }}" height="{{ card.card_image.height }}">
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

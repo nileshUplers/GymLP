@@ -1,0 +1,118 @@
+/*
+  Positivus Services Section Module Styles
+*/
+
+.positivus-services {
+  padding: 80px 40px;
+}
+
+.positivus-services__wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.positivus-services__header {
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.positivus-services__title {
+  display: inline-block;
+  background-color: var(--secondary-color, #B9FF66);
+  color: var(--primary-color, #1E1E1E);
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.positivus-services__intro {
+  display: inline;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.positivus-services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--primary-color, #1E1E1E);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.service-card__title {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+.service-card__link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.service-card__link-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  border-radius: 50%;
+  margin-right: 10px;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>') no-repeat center;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>') no-repeat center;
+}
+
+.service-card__image {
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+/* Card Styles */
+.service-card--light {
+  background-color: #FFFFFF;
+  color: var(--primary-color, #1E1E1E);
+}
+
+.service-card--dark {
+  background-color: var(--primary-color, #1E1E1E);
+  color: #FFFFFF;
+}
+
+.service-card--green {
+  background-color: var(--secondary-color, #B9FF66);
+  color: var(--primary-color, #1E1E1E);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .positivus-services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .positivus-services__header {
+    text-align: center;
+  }
+  .positivus-services__intro {
+    display: block;
+    margin-top: 20px;
+  }
+  .service-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .service-card__image {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
