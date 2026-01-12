@@ -1,0 +1,35 @@
+<!--
+  templateType: module
+  label: 'Hero Section'
+  is-available-for-new-content: true
+-->
+
+<section class="positivus-hero">
+  <div class="positivus-hero__wrapper">
+    <div class="positivus-hero__content">
+      <h1 class="positivus-hero__headline">
+        {{ module.headline }}
+      </h1>
+      <div class="positivus-hero__text">
+        {{ module.content }}
+      </div>
+      <div class="positivus-hero__cta">
+        {% set href = module.button.url.href %}
+        {% if module.button.url.type is equalto 'EMAIL_ADDRESS' %}
+          {% set href = 'mailto:' + href %}
+        {% endif %}
+        <a class="button" href="{{ href }}"
+          {% if module.button.open_in_new_tab %}target="_blank"{% endif %}
+          {% if module.button.rel %}rel="{{ module.button.rel|join(' ') }}"{% endif %}
+          >
+          {{ module.button_text }}
+        </a>
+      </div>
+    </div>
+    <div class="positivus-hero__image">
+      {% if module.image.src %}
+        <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" width="{{ module.image.width }}" height="{{ module.image.height }}">
+      {% endif %}
+    </div>
+  </div>
+</section>

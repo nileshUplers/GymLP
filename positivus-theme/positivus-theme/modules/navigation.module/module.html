@@ -1,0 +1,35 @@
+<!--
+  templateType: module
+  label: 'Header Navigation'
+  is-available-for-new-content: true
+-->
+
+<header class="positivus-header">
+  <div class="positivus-header__wrapper">
+    <div class="positivus-header__logo">
+      <a href="/">
+        {% if module.logo.src %}
+          <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" width="{{ module.logo.width }}" height="{{ module.logo.height }}">
+        {% endif %}
+      </a>
+    </div>
+    <nav class="positivus-header__nav" id="main-nav" aria-label="Main navigation">
+       {% menu id="{{ module.navigation_menu }}" label="Navigation Menu" %}
+      <div class="positivus-header__cta">
+        {% set href = module.cta_button.url.href %}
+        {% if module.cta_button.url.type is equalto 'EMAIL_ADDRESS' %}
+          {% set href = 'mailto:' + href %}
+        {% endif %}
+        <a class="button" href="{{ href }}"
+          {% if module.cta_button.open_in_new_tab %}target="_blank"{% endif %}
+          {% if module.cta_button.rel %}rel="{{ module.cta_button.rel|join(' ') }}"{% endif %}
+          >
+          Request a quote
+        </a>
+      </div>
+    </nav>
+    <button class="positivus-header__toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="positivus-header__toggle-icon"></span>
+    </button>
+  </div>
+</header>
