@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "name": "header",
+    "label": "Header",
+    "type": "global_partial_path",
+    "default_path": "positivus-theme/templates/partials/header.html"
+  },
+  {
+    "name": "footer",
+    "label": "Footer",
+    "type": "global_partial_path",
+    "default_path": "positivus-theme/templates/partials/footer.html"
+  }
+]

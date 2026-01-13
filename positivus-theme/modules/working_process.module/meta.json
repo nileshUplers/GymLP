@@ -1,0 +1,15 @@
+{
+  "label": "Working Process Section",
+  "css_assets": [],
+  "external_js": [],
+  "js_assets": [
+    {
+      "path": "./module.js",
+      "autoload": true
+    }
+  ],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}

@@ -22,7 +22,7 @@
           </div>
           <div class="service-card__image">
             {% if card.card_image.src %}
-              <img src="{{ card.card_image.src }}" alt="{{ card.card_image.alt }}" width="{{ card.card_image.width }}" height="{{ card.card_image.height }}">
+              <img src="{{ card.card_image.src }}" alt="{{ card.card_image.alt }}" width="{{ card.card_image.width }}" height="{{ card.card_image.height }}" loading="lazy">
             {% endif %}
           </div>
         </div>

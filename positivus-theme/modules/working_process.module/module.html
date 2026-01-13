@@ -1,0 +1,24 @@
+<section class="working-process">
+  <div class="working-process__header">
+    <h2 class="working-process__title">{{ module.title }}</h2>
+    <p class="working-process__description">{{ module.description }}</p>
+  </div>
+  <div class="working-process__accordion">
+    {% for item in module.accordion_items %}
+      <div class="accordion-item {% if loop.first %}is-open{% endif %}">
+        <h3 class="accordion-item__header">
+          <button class="accordion-item__toggle" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}">
+            <span class="accordion-item__number">0{{ loop.index }}</span>
+            <span class="accordion-item__title">{{ item.title }}</span>
+            <span class="accordion-item__icon"></span>
+          </button>
+        </h3>
+        <div class="accordion-item__content">
+          <div class="accordion-item__content-inner">
+            {{ item.content }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
