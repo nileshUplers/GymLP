@@ -1,0 +1,25 @@
+<div class="cta-section">
+  <div class="cta-content">
+    {% if module.headline %}
+      <h2>{{ module.headline }}</h2>
+    {% endif %}
+    {% if module.text %}
+      <div class="cta-text">
+        {{ module.text }}
+      </div>
+    {% endif %}
+    {% if module.button.href %}
+      <a href="{{ module.button.href }}" class="cta-button"
+        {% if module.button.open_in_new_tab %}target="_blank"{% endif %}
+        {% if module.button.rel %}rel="{{ module.button.rel }}"{% endif %}
+      >
+        {{ module.button.text }}
+      </a>
+    {% endif %}
+  </div>
+  <div class="cta-image">
+    {% if module.image.src %}
+      <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" loading="lazy">
+    {% endif %}
+  </div>
+</div>

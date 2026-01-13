@@ -1,0 +1,32 @@
+[
+  {
+    "id": "logo",
+    "name": "logo",
+    "label": "Logo",
+    "type": "logo",
+    "default": {
+      "src": "{{ get_asset_url('/positivus-theme/images/logo.png') }}",
+      "alt": "Positivus logo"
+    }
+  },
+  {
+    "id": "navigation_menu",
+    "name": "navigation_menu",
+    "label": "Navigation menu",
+    "type": "menu"
+  },
+  {
+    "id": "cta_button",
+    "name": "cta_button",
+    "label": "CTA Button",
+    "type": "link",
+    "default": {
+      "url": {
+        "href": "#",
+        "type": "EXTERNAL"
+      },
+      "text": "Request a quote",
+      "open_in_new_tab": false
+    }
+  }
+]

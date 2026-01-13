@@ -1,0 +1,41 @@
+[
+  {
+    "id": "headline",
+    "name": "headline",
+    "label": "Headline",
+    "type": "text",
+    "default": "Let's make things happen"
+  },
+  {
+    "id": "text",
+    "name": "text",
+    "label": "Text",
+    "type": "richtext",
+    "default": "Contact us today to learn more about how our digital marketing services can help your business grow and succeed online."
+  },
+  {
+    "id": "button",
+    "name": "button",
+    "label": "Button",
+    "type": "link",
+    "default": {
+      "url": {
+        "href": "#",
+        "type": "EXTERNAL"
+      },
+      "text": "Get your free proposal",
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "id": "image",
+    "name": "image",
+    "label": "Image",
+    "type": "image",
+    "default": {
+      "src": "{{ get_asset_url('/positivus-theme/images/cta-graphic.png') }}",
+      "alt": "Decorative graphic with abstract shapes and a smiley face.",
+      "loading": "lazy"
+    }
+  }
+]
