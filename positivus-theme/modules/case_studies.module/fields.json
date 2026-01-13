@@ -1,0 +1,50 @@
+[
+  {
+    "id": "title",
+    "name": "title",
+    "label": "Title",
+    "type": "text",
+    "default": "Case Studies"
+  },
+  {
+    "id": "description",
+    "name": "description",
+    "label": "Description",
+    "type": "text",
+    "default": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
+  },
+  {
+    "id": "case_studies",
+    "name": "case_studies",
+    "label": "Case Studies",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 3,
+      "default": 3
+    },
+    "children": [
+      {
+        "id": "text",
+        "name": "text",
+        "label": "Text",
+        "type": "richtext",
+        "default": "<p>For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.</p>"
+      },
+      {
+        "id": "link",
+        "name": "link",
+        "label": "Link",
+        "type": "link",
+        "default": {
+          "url": {
+            "href": "#",
+            "type": "EXTERNAL"
+          },
+          "text": "Learn more",
+          "open_in_new_tab": false
+        }
+      }
+    ]
+  }
+]
